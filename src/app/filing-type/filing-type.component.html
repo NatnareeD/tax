@@ -1,0 +1,27 @@
+<h3 class="text-decoration">1. Tax Filing Detail</h3>
+<hr>
+<h6>Type of filing</h6>
+<div class="row">
+    <div class="col-sm-3">
+        <div class="form-check">
+            <input  [(ngModel)]="filing" type="radio" class="form-check-input" id="radio1" name="optradio" value="0" (change)="Change()">
+            <label class="form-check-label" for="radio1">Ordinary Filing</label>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-check">
+            <input [(ngModel)]="filing" type="radio" class="form-check-input" id="radio2" name="optradio" value="1" (change)="OnChange()">
+            <label class="form-check-label" for="radio2">Additional Filing</label>
+            <!-- <div *ngIf="filing === '1'"> eiei
+            </div> -->
+        </div>
+    </div>
+</div>
+<!-- <button (click)="sentMessage()"></button> -->
+{{filing}}
+
+<!-- <label>Click me: <input type="checkbox" ngModel="checked" ngOnInit="checked=true" /></label><br />
+Show when checked:
+<span *ngIf="checked" class="animate-if">
+    This is removed when the checkbox is unchecked.
+</span> -->
