@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./penalty.component.css']
 })
 export class PenaltyComponent implements OnInit {
+  penalty:any
 
   constructor() { }
 
   ngOnInit(): void {
+    this.penalty = 200.00
   }
+
+  
 
 }

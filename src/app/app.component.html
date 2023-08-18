@@ -1,247 +1,264 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <img width="40" alt="Angular Logo"
-    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
   <span>Welcome</span>
   <div class="spacer"></div>
-  <a aria-label="Angular on twitter" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Twitter">
-    <svg id="twitter-logo" height="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-      <rect width="400" height="400" fill="none" />
-      <path
-        d="M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23"
-        fill="#fff" />
-    </svg>
-  </a>
-  <a aria-label="Angular on YouTube" target="_blank" rel="noopener" href="https://youtube.com/angular" title="YouTube">
-    <svg id="youtube-logo" height="24" width="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24" fill="#fff">
-      <path d="M0 0h24v24H0V0z" fill="none" />
-      <path
-        d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z" />
-    </svg>
+  <a target="_blank" rel="noopener" href="https://www.pccth.com/" title="Pccth">
+    <span>Professional Computer Co.,Ltd </span>
   </a>
 </div>
 <div class="content" role="main">
   <!-- Highlight Card -->
   <h1>Submit Tax Filing</h1>
   <!-- Resources -->
-  <h3>1..........2</h3>
+  <h3>1...2</h3>
 </div>
+
 <div *ngIf="page === 'page1'">
-  <div class="card-container">
-    <div class="card" style="height: 700px">
-      <div class="card-body">
-        <app-filing-type (event)="receiveMessage($event)">sentMessage: {{message}}</app-filing-type>
-        <br>
-        <div *ngIf="message === 'Ordinary Filing'">
-          <h6>VAT Month</h6>
-          <div class="row">
-            <div class="col-sm-3">
-              <app-month (event)="receiveMonth($event)"></app-month>
+  <div>
+    <div class="card-container">
+      <div class="card" style="height: 700px">
+        <div class="card-body">
+          <app-filing-type (event)="receiveMessage($event)">sentMessage: {{message}}</app-filing-type>
+          <br>
+          <div *ngIf="message === 'Ordinary Filing'">
+            <h6>VAT Month</h6>
+            <div class="row">
+              <div class="col-sm-3">
+                <app-month (event)="receiveMonth($event)"></app-month>
+              </div>
+              <div class="col-sm-3">
+                <app-year (event)="receiveYear($event)"></app-year>
+              </div>
             </div>
-            <div class="col-sm-3">
-              <app-year></app-year>
+            <div class="row">
+              <div class="col-sm-6">
+                <br>
+                <h3 class="text-decoration" style="inline-size: none;">2. Tax Computation</h3>
+              </div>
+              <div class="col-sm-6">
+                <br>
+                <p style="inline-size: none;">View Exchang Rate</p>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-6">
-              <br>
-              <h3 class="text-decoration" style="inline-size: none;">2. Tax Computation</h3>
-            </div>
-            <div class="col-sm-6">
-              <br>
-              <p style="inline-size: none;">View Exchang Rate</p>
-            </div>
-          </div>
-          <hr>
-          <h6>Provide total value taxable electronic service</h6><br>
-          <div>
-            <div class="divAccountData">
-              <div class="row">
-                <div class="col-sm-8">
-                  <h6>1.Total value of taxable electronic service exclusive of VAT</h6>
+            <hr>
+            <h6>Provide total value taxable electronic service</h6><br>
+            <div>
+              <div class="divAccountData">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h6>1.Total value of taxable electronic service exclusive of VAT</h6>
+                  </div>
+                  <div class="col-sm-3">
+                    <app-sale-amount (event)="receiveTotal($event)"></app-sale-amount>
+                  </div>
                 </div>
-                <div class="col-sm-3">
-                  <app-sale-amount (event)="receiveTotal($event)"></app-sale-amount>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h6>2.Total VAT to be remitted (7% of 1.)</h6>
+                  </div>
+                  <div class="col-sm-3">
+                    <app-tax-amount [vatItem]="vat"></app-tax-amount>
+                  </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-sm-8">
-                  <h6>2.Total VAT to be remitted (7% of 1.)</h6>
+            </div>
+          </div>
+          <div *ngIf="message === 'Additional Filing'">
+            <div class="row">
+              <div class="col-sm">
+                <h6>Tax Month</h6>
+                <div class="row">
+                  <div class="col-sm">
+                    <app-month (event)="receiveMonth($event)"></app-month>
+                  </div>
+                  <div class="col-sm">
+                    <app-year (event)="receiveYear($event)"></app-year>
+                  </div>
                 </div>
-                <div class="col-sm-3">
-                  <app-tax-amount [vatItem]="vat"></app-tax-amount>
+              </div>
+              <div class="col-sm">
+                <h6>Type</h6>
+                <select class="form-select">
+                  <option value="1">On :Time</option>
+                  <option value="2">On :Time</option>
+                  <option value="3">On :Time</option>
+                  <option value="4">On :Time</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <br>
+                <h3 class="text-decoration" style="inline-size: none;">2. Tax Computation</h3>
+              </div>
+              <div class="col-sm-6">
+                <br>
+                <p style="inline-size: none;">View Exchang Rate</p>
+              </div>
+            </div>
+            <hr>
+            <h6>Provide total value taxable electronic service</h6><br>
+            <div>
+              <div class="divAccountData">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h6>1.Underdectared Thai taxable electronic service</h6>
+                  </div>
+                  <div class="col-sm-3">
+                    <app-sale-amount (event)="receiveTotal($event)"></app-sale-amount>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h6>2.Total VAT to be remitted (7% of 1.)</h6>
+                  </div>
+                  <div class="col-sm-3">
+                    <app-tax-amount [vatItem]="vat" ></app-tax-amount>
+                  </div>
+                </div>
+                <br>
+                <h6>In case of late filing and payment,or additional filing</h6>
+                <br>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h6>3.Surcharge</h6>
+                  </div>
+                  <div class="col-sm-3">
+                    <app-surcharge [surchargeItem]="surcharge"></app-surcharge>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h6>4.Penalty</h6>
+                  </div>
+                  <div class="col-sm-3">
+                    <app-penalty></app-penalty>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h6>5.Underdectared Thai taxable electronic service</h6>
+                  </div>
+                  <div class="col-sm-3">
+                    <app-total-amount [sumTotalItem]="totalsum"></app-total-amount>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div *ngIf="message === 'Additional Filing'">
-          <div class="row">
-            <div class="col-sm">
-              <h6>Tax Month</h6>
-              <div class="row">
-                <div class="col-sm">
-                  <app-month (event)="receiveMonth($event)"></app-month>
-                </div>
-                <div class="col-sm">
-                  <app-year></app-year>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm">
-              <h6>Type</h6>
-              <select class="form-select">
-                <option value="1">On :Time</option>
-                <option value="2">On :Time</option>
-                <option value="3">On :Time</option>
-                <option value="4">On :Time</option>
-              </select>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-6">
-              <br>
-              <h3 class="text-decoration" style="inline-size: none;">2. Tax Computation</h3>
-            </div>
-            <div class="col-sm-6">
-              <br>
-              <p style="inline-size: none;">View Exchang Rate</p>
-            </div>
-          </div>
-          <hr>
-          <h6>Provide total value taxable electronic service</h6><br>
-          <div>
-            <div class="divAccountData">
-              <div class="row">
-                <div class="col-sm-8">
-                  <h6>1.Underdectared Thai taxable electronic service</h6>
-                </div>
-                <div class="col-sm-3">
-                  <app-sale-amount (event)="receiveTotal($event)"></app-sale-amount>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-8">
-                  <h6>2.Total VAT to be remitted (7% of 1.)</h6>
-                </div>
-                <div class="col-sm-3">
-                  <app-tax-amount></app-tax-amount>
-                </div>
-              </div>
-              <br>
-              <h6>In case of late filing and payment,or additional filing</h6>
-              <br>
-              <div class="row">
-                <div class="col-sm-8">
-                  <h6>3.Surcharge</h6>
-                </div>
-                <div class="col-sm-3">
-                  <app-surcharge></app-surcharge>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-8">
-                  <h6>4.Penalty</h6>
-                </div>
-                <div class="col-sm-3">
-                  <app-penalty></app-penalty>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-8">
-                  <h6>5.Underdectared Thai taxable electronic service</h6>
-                </div>
-                <div class="col-sm-3">
-                  <app-total-amount></app-total-amount>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-left: 250px; padding-bottom: 10px;">
+    <div class="row">
+      <div class="col-sm-1">
+        <button (click)="goback()" type="button" class="btn btn-outline-dark">Back</button>
+      </div>
+      <div class="col-sm-2">
+        <button (click)="gotoconfirm()" type="button" class="btn btn-outline-dark">Next</button>
       </div>
     </div>
   </div>
 </div>
 
 <div *ngIf="page === 'page2'">
-  <div class="card-container">
-    <div class="card">
-      <div class="card-body">
-        <h6>Tax Filing Detail</h6>
-        <hr>
-        <div class="row">
-          <div class="col-sm-9">
-            <a>Type of filing</a>
+  <div>
+    <div class="card-container">
+      <div class="card">
+        <div class="card-body">
+          <h6>Tax Filing Detail</h6>
+          <hr>
+          <div class="row">
+            <div class="col-sm-9">
+              <a>Type of filing</a>
+            </div>
+            <div class="col-sm-3">
+              <a>{{message}}</a>
+            </div>
           </div>
-          <div class="col-sm-3">
-            <a>{{message}}</a>
+          <div class="row">
+            <div class="col-sm-9">
+              <a>VAT Month</a>
+            </div>
+            <div class="col-sm-3">
+              <a>{{month}} {{year}}</a>
+            </div>
           </div>
+          <br>
+          <h6>Tax Computation</h6>
+          <hr>
+          <div class="row">
+            <div class="col-sm-9">
+              <b>Total value of taxable electronic service exclusive of VAT </b>
+            </div>
+            <div class="col-sm-3">
+              <a>{{total | number: '1.1-2'}}</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-9">
+              <b>Total VAT to be remitted </b>
+              <a>(7% of Total value of taxable electronic service exclusive of VAT)</a>
+            </div>
+            <div class="col-sm-3">
+              <a>{{vat | number: '1.1-2'}}</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-9">
+              <b>Total Amount Payable</b>
+            </div>
+            <div class="col-sm-3">
+              <b>{{vat | number: '1.1-2'}}</b>
+            </div>
+          </div>
+          <br>
+          <h6>Declaration</h6>
+          <hr>
+          <a>I hereby certify that information given above are true and correct and
+            agree to be bound by such information.
+          </a>
         </div>
-        <div class="row">
-          <div class="col-sm-9">
-            <a>VAT Month</a>
-          </div>
-          <div class="col-sm-3">
-            <a>{{month}}</a>
-          </div>
-        </div>
-        <br>
-        <h6>Tax Computation</h6>
-        <hr>
-        <div class="row">
-          <div class="col-sm-9">
-            <b>Total value of taxable electronic service exclusive of VAT </b>
-          </div>
-          <div class="col-sm-3">
-            <a>{{total | number: '1.1-2'}}</a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-9">
-            <b>Total VAT to be remitted </b>
-            <a>(7% of Total value of taxable electronic service exclusive of VAT)</a>
-          </div>
-          <div class="col-sm-3">
-            <a>{{vat | number: '1.1-2'}}</a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-9">
-            <b>Total Amount Payable</b>
-          </div>
-          <div class="col-sm-3">
-            <b>{{vat | number: '1.1-2'}}</b>
-          </div>
-        </div>
-        <br>
-        <h6>Declaration</h6>
-        <hr>
-        <a>I hereby certify that information given above are true and correct and
-          agree to be bound by such information.
-        </a>
+      </div>
+    </div>
+    <div class="row" style="margin-left: 375px;">
+      <div class="col-sm">
+        <button (click)="postData()" type="button" class="btn btn-outline-dark" data-toggle="modal"
+          data-target="#exampleModalCenter">Confirm
+          and Submit</button>
       </div>
     </div>
   </div>
-</div>
-<!-- </div> -->
+  <!-- </div> (click)="goback()" -->
 
-<div style="margin-left: 250px; padding-bottom: 10px;">
-  <div class="row">
-    <div class="col-sm-1">
-      <button (click)="goback()" type="button" class="btn btn-outline-dark">Back</button>
-    </div>
-    <div class="col-sm-2">
-      <button (click)="gotoconfirm()" type="button" class="btn btn-outline-dark">Next</button>
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Json Data</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          {{result}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- Next Steps -->
 
-<!-- Footer -->
-<footer>
-  <!-- Love Angular?&nbsp;
+
+  <!-- Next Steps -->
+
+  <!-- Footer -->
+  <footer>
+    <!-- Love Angular?&nbsp;
       <a href="https://github.com/angular/angular" target="_blank" rel="noopener"> Give our repo a star.
         <div class="github-star-badge">
           <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -257,12 +274,12 @@
           <path d="M0 0h24v24H0z" fill="none" />
         </svg>
       </a> -->
-</footer>
+  </footer>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+  <!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

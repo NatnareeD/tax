@@ -1,7 +1,6 @@
-<select class="form-select" [(ngModel)]="year">
-    <option value="01">2020</option>
-    <option value="02">2021</option>
-    <option value="03">2022</option>
-    <option value="04">2023</option>
+<select class="form-select" [(ngModel)]="year" (change)="getYear($event)">
+    <option value="2020">2020</option>
+    <option value="2021">2021</option>
+    <option value="2022">2022</option>
+    <option value="2023">2023</option>
 </select>
-{{year}}

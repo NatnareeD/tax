@@ -11,7 +11,7 @@ import { PenaltyComponent } from './penalty/penalty.component';
 import { TotalAmountComponent } from './total-amount/total-amount.component';
 import { FormsModule } from '@angular/forms';
 import { ConfirmPageComponent } from './confirm-page/confirm-page.component';
-
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -30,6 +30,7 @@ import { ConfirmPageComponent } from './confirm-page/confirm-page.component';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     
   ],
   providers: [],

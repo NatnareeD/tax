@@ -14,8 +14,8 @@ export class TaxAmountComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
     this.total = 0;
+    
   }
 
   // receiveTotal($event: any){

@@ -100,6 +100,10 @@ svg.material-icons:not(:last-child) {
     transition: all 0.2s ease-in-out;
     line-height: 24px;
 }
+center {
+    align-items: center;
+    display: flex;
+}
 
 .card-container .card:not(:last-child) {
     margin-right: 0;

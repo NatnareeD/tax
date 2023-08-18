@@ -1,1 +1,1 @@
-<input placeholder="{{ vatItem == 0 || vatItem == null ? 'THB' : vatItem + ' THB' }}" style="text-align: right;" type="text">
+<input placeholder="{{ vatItem | number: '1.1-2' }} THB " style="text-align: right;" type="text">
